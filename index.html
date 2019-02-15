@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="characterStyle.css">
+    </head>
+
+    <body>
+
+    <div class="container">
+        <!--Contains character image and basic information for user input-->
+        <div id="row1" class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8 ">
+                    <div class="image-upload">
+                        <label for="file-input" class="float-left">
+                            <img id="thumbnail" src="temp.png"> 
+                        </label>
+                        <input id="file-input" type="file" onchange="setImage()"/> 
+                    </div>
+                    <p>
+                    <input id="buffer"  type="text" disabled><br>
+                    <span class="badge badge-secondary">Name</span>
+                    <input id="charName"  type="text" placeholder="Character Name"><br>
+                    <span class="badge badge-secondary">Race</span>
+                    <input id="charRace" type="text" placeholder="Race"><br>
+                    <span class="badge badge-secondary">Class / Level</span>
+                    <input id="charLevel" type="text" placeholder="Class Level"><br>
+                    <span class="badge badge-secondary">Background</span>
+                    <input id="charBackground" type="text" placeholder="Background"><br>
+                    <span class="badge badge-secondary">Alignment</span>
+                    <input id="charAlignment" type="text" placeholder="Alignment"><br>
+                    <span class="badge badge-secondary">Experience</span>
+                    <input id="charExp" type="text" placeholder="Experience"><br>
+                    <span class="badge badge-secondary">Proficiency</span>
+                    <input id="charProficiency" type="text" placeholder="Proficiency Bonus"><br>
+                    <span class="badge badge-secondary">Initiative</span>
+                    <input id='charInit' type="text" placeholder="Initiative"><br>
+                    <span class="badge badge-secondary">Speed</span>
+                    <input id='charSpeed' type="text" placeholder="Speed"><br>
+                    <span class="badge badge-secondary">AC</span>
+                    <input id='charAC' type="text" placeholder="AC"><br>
+                    <span class="badge badge-secondary">HP</span>
+                    <input id='charHealth' type="text" placeholder="Health">
+                    </p>
+            </div>
+        </div>
+
+        <!--Saving throws-->
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <span class="badge badge-secondary ds">Saving Throws</span>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col">
+                            <label class="checkThrow strThrow"></label>
+                    <div class="row">
+                        <input id="strThrow" class="stats throws" type="text" placeholder="0" maxlength="2">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="checkThrow dexThrow"></label>
+                    <div class="row">
+                        <input id="dexThrow" class="stats throws" type="text" placeholder="0" maxlength="2">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="checkThrow conThrow"></label>
+                    <div class="row">
+                        <input id="conThrow" class="stats throws" type="text" placeholder="0" maxlength="2">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="checkThrow intThrow"></label>
+                    <div class="row">
+                        <input id="intThrow" class="stats throws" type="text" placeholder="0" maxlength="2">
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <label class="checkThrow wisThrow"></label>
+                    <div  class="row">
+                        <input id="wisThrow" class="stats throws" type="text" placeholder="0" maxlength="2">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="checkThrow chaThrow"></label>
+                    <div class="row">
+                        <input id="chaThrow" class="stats throws" type="text" placeholder="0" maxlength="2">
+                    </div>
+                </div>
+                </div>   
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+
+        <!--Stat Block-->
+        <div id="row2" class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col">
+                        STR
+                        <div class="row">
+                            <input id="str" class="stats" type="text" placeholder="0" maxlength="2">
+                        </div>
+                        <span id="strMod" class="badge badge-pill badge-light">+0</span>
+                    </div>
+    
+                    <div class="col">
+                        DEX
+                        <div class="row">
+                            <input id="dex" class="stats" type="text" placeholder="0" maxlength="2">
+                        </div>
+                        <span id="dexMod" class="badge badge-pill badge-light">+0</span>
+                    </div>
+    
+                    <div class="col">
+                        CON
+                        <div class="row">
+                            <input id="con" class="stats" type="text" placeholder="0" maxlength="2">
+                        </div>
+                        <span id="conMod" class="badge badge-pill badge-light">+0</span>
+                    </div>
+    
+                    <div class="col">
+                        INT
+                        <div class="row">
+                            <input id="int" class="stats" type="text" placeholder="0" maxlength="2">
+                        </div>
+                        <span id="intMod" class="badge badge-pill badge-light">+0</span>
+                    </div>
+    
+                    <div class="col">
+                        WIS
+                        <div  class="row">
+                            <input id="wis" class="stats" type="text" placeholder="0" maxlength="2">
+                        </div>
+                        <span id="wisMod" class="badge badge-pill badge-light">+0</span>
+                    </div>
+    
+                    <div class="col">
+                        CHA
+                        <div class="row">
+                            <input id="cha" class="stats" type="text" placeholder="0" maxlength="2">
+                        </div>
+                        <span id="chaMod" class="badge badge-pill badge-light">+0</span>
+                        </div>
+                    </div>  
+                </div>       
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <!--Death Save toggles-->
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><span class="badge badge-secondary ds">Death Saves</span></div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row inline-block">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <div class="row death-saves">
+                    
+                    <div class="col-md-6">
+                        <label>Successes</label>  
+                        <label id="save1" class="check success"></label>
+                        <label id="save2" class="check success"></label>
+                        <label id="save3" class="check success"></label>
+                    </div>
+                    <div class="col-md-6">
+                        <label id="save4" class="check failure"></label>
+                        <label id="save5" class="check failure"></label>
+                        <label id="save6" class="check failure"></label>
+                        <label>Failures </label> 
+                    </div>
+                </div>   
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <!--Currency-->
+        <div id="#row3" class="row currency">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-8 currencyBlock">  
+                                
+                                <img src="bag.png" class="bag" alt="">                          
+                                <label class="gold"></label><input id="gold" type="text" placeholder="0" maxlength="5">
+                                <label class="silver"></label><input id="silver" type="text" placeholder="0" maxlength="5">
+                                <label class="copper"></label><input id="copper" type="text" placeholder="0" maxlength="5"></div>
+                            <div class="col-md-1"></div>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+        </div>
+
+        <!--Tab Buttons-->
+        <div id="row4" class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="w3-bar w3-black">
+                    <button class="btn btn-secondary btnTab" onclick="changeTab('Attacks')">Attacks</button>
+                    <button class="btn btn-secondary btnTab" onclick="changeTab('Items')">Items</button>
+                    <button class="btn btn-secondary btnTab" onclick="changeTab('Spells')">Spells</button>
+                    <button class="btn btn-secondary btnTab" onclick="changeTab('Skills')">Skills</button>
+                    <button class="btn btn-secondary btnTab" onclick="changeTab('Info')">Info</button>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <!--Tab Contents-->
+        <div id="row5" class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div id="Attacks" class="tab">
+                    <div class="row atk-header">
+                        <div class="col-sm-4">Attack Name</div>
+                        <div class="col-sm-4">Attack Bonus</div>
+                        <div class="col-sm-4">Damage/Type</div>
+                    </div>
+                    <div class="atkContainer">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10"></div>
+                        <div class="col-sm-2"><button class="btn btn-secondary atkBtn">+</button></div>
+                    </div> 
+                </div>
+                <div id="Items" class="tab" style="display:none">
+                    <div class="row itm-header">
+                        <div class="col-sm-6">Item Name</div>
+                        <div class="col-sm-3">#</div>
+                        <div class="col-sm-3">Weight</div>
+                    </div>
+                    <div class="itmContainer">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10"></div>
+                        <div class="col-sm-2"><button class="btn btn-secondary itmBtn">+</button></div>
+                    </div> 
+                </div>
+                <div id="Spells" class="tab" style="display:none">
+                    <div class="row spl-header">
+                        <div class="col-sm-12 slots">+Spell Slots+</div>
+                    </div>
+                    <div class="container spellSlots">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">1</span>
+                                <div class="row">
+                                    <input id="1Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="1Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">2</span>
+                                <div class="row">
+                                    <input id="2Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="2Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">3</span>
+                                <div class="row">
+                                    <input id="3Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="3Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">4</span>
+                                <div class="row">
+                                    <input id="4Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="4Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">5</span>
+                                <div class="row">
+                                    <input id="5Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="5Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">6</span>
+                                <div class="row">
+                                    <input id="6Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="6Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">7</span>
+                                <div class="row">
+                                    <input id="7Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="7Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">8</span>
+                                <div class="row">
+                                    <input id="8Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="8Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-pill badge-secondary">9</span>
+                                <div class="row">
+                                    <input id="9Cur" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                    /
+                                    <input id="9Max" class="stats splSlot" type="text" placeholder="0" maxlength="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row spl-header">
+                        <div class="col-sm-8">Spell Name</div>
+                        <div class="col-sm-4">Spell Level</div>
+                    </div>                    
+                    <div class="splContainer">
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10"></div>
+                        <div class="col-sm-2"><button class="btn btn-secondary splBtn">+</button></div>
+                    </div> 
+                </div>
+                <div id="Skills" class="tab" style="display:none">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Acrobatics"></label><br></div>
+                                <div class="col-sm-2"><input  id="Acrobatics" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Acrobatics</label>  </div>
+                            </div>
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill AnimalHandling"></label><br></div>
+                                <div class="col-sm-2"><input  id="AnimalHandling" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Animal Handling</label>  </div>
+                            </div>
+
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Arcana"></label><br></div>
+                                <div class="col-sm-2"><input  id="Arcana" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Arcana</label> </div>
+                            </div>
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Athletics"></label><br></div>
+                                <div class="col-sm-2"><input id="Athletics" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Athletics</label> </div>
+                            </div>
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div> 
+                                <div class="col-sm-1"><label class="checkSkill Deception"></label><br></div>
+                                <div class="col-sm-2"><input id="Deception" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Deception</label></div>
+                            </div>
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill History"></label><br></div>
+                                <div class="col-sm-2"><input id="History" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>History</label></div>
+                            </div>
+                            <div  class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Insight"></label><br></div>
+                                <div class="col-sm-2"><input id="Insight" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Insight</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Intimidation"></label><br></div>
+                                <div class="col-sm-2"><input id="Intimidation" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Intimidation</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Investigation"></label><br></div>
+                                <div class="col-sm-2"><input id="Investigation" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Investigation</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Medicine"></label><br></div>
+                                <div class="col-sm-2"><input id="Medicine" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Medicine</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Nature"></label><br></div>
+                                <div class="col-sm-2"><input id="Nature" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Nature</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Perception"></label><br></div>
+                                <div class="col-sm-2"><input id="Perception" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Perception</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Religion"></label><br></div>
+                                <div class="col-sm-2"><input id="Religion" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Religion</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill SleightofHand"></label><br></div>
+                                <div class="col-sm-2"><input id="SleightofHand" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Sleight of Hand</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Stealth"></label><br></div>
+                                <div class="col-sm-2"><input id="Stealth" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Stealth</label></div>
+                            </div>
+                            <div class="row skillRow">
+                                <div class="col-sm-3"></div>
+                                <div class="col-sm-1"><label class="checkSkill Survival"></label><br></div>
+                                <div class="col-sm-2"><input id="Survival" class="stats skills" type="text" placeholder="0" maxlength="2"></div>
+                                <div class="col-sm-6"><label>Survival</label></div>
+                            </div> 
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="Info" class="tab" style="display:none">
+                    <div class="form-group">
+                        <div class="row spl-header prof">
+                            <div class="col-sm-12">Proficiencies and Languages</div>
+                        </div>
+                        <div id="prof" class="row" style="display:none">
+                            <textarea class="form-control" id="profText" rows="2"></textarea>
+                        </div>
+                       
+                      </div>
+                    <div class="form-group">
+                        <div class="row spl-header feat">
+                            <div class="col-sm-12">Features and Traits</div>
+                        </div>
+                        <div id="feat" class="row" style="display:none">
+                            <textarea class="form-control" id="featText" rows="6"></textarea>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="characterScript.js"></script>
+</footer>
+</html>
