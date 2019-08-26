@@ -2,7 +2,7 @@
 This project is a Dungeons and Dragons 5e character sheet implemented using web based technologies. 
 
 ## Getting Started
-Open the charactersheet.html in the browser of your choice.
+View the deployment [here.](https://farrare.github.io/5eCharacterSheet/)
 
 ## Tools
 Boostrap and JQuery
