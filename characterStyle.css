@@ -111,11 +111,12 @@ input {
 }
 
 input {
-  margin: .1rem;
+  margin: .2rem;
   border-radius: 15px;
-  background: #474747;
-  -webkit-box-shadow: inset 5px 5px 6px #383838,  inset -5px -5px 6px #565656;
-          box-shadow: inset 5px 5px 6px #383838,  inset -5px -5px 6px #565656;
+  border-radius: 50px;
+  background: #a8a8a8;
+  -webkit-box-shadow: inset 7px 7px 14px #999999,  inset -7px -7px 14px #b7b7b7;
+          box-shadow: inset 7px 7px 14px #999999,  inset -7px -7px 14px #b7b7b7;
 }
 
 .badge {
