@@ -12,6 +12,7 @@ input{
     padding-top: 1cm;
 }
 
+
 .check {
     position:relative;
     top:8px;
@@ -52,6 +53,7 @@ input{
 
 .container{
     margin-top: 10px;
+    
 }
 
 .image-upload > input
@@ -68,6 +70,9 @@ input{
     object-position: 50% 10%;
     border-radius: 50%;
     border: solid 2px;
+background: linear-gradient(145deg, #4c4c4c, #404040);
+box-shadow:  5px 5px 6px #383838, 
+             -5px -5px 6px #565656;
 }
 .image-upload{
     shape-outside: circle(50%);
@@ -97,15 +102,34 @@ input{
 
 .btnSave{
     Margin: 10px 0px;
+    
 }
+
 .btnTab {
-    -ms-transform: skewX(-20deg);
-    -webkit-transform: skewX(-20deg);
-    transform: skewX(-20deg);
+    border-radius: 15px;
+    background: linear-gradient(145deg, #404040, #4c4c4c);
+    box-shadow:  5px 5px 6px #383838, 
+                 -5px -5px 6px #565656;
+}
+input{
+    margin:.1rem;
+    border-radius: 15px;
+    background: #474747;
+    box-shadow: inset 5px 5px 6px #383838, 
+                inset -5px -5px 6px #565656;
+}
+
+.badge{
+    margin:.2rem;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #4c4c4c, #404040);
+    box-shadow:  5px 5px 6px #383838, 
+                 -5px -5px 6px #565656;
 }
      
 .atkBtn, .splBtn, .itmBtn{
     margin-top: 5px;
+    
 }
 .atkContainer input, .splContainer input, .itmContainer input{
     margin-top: 10px;
@@ -118,10 +142,14 @@ input{
 }
 
 .atk-header, .itm-header, .spl-header{
-    background-color: grey;
     margin-top: 2px;
     color: white;
     border-radius: 10px;
+    border-radius: 15px;
+background: linear-gradient(145deg, #4c4c4c, #404040);
+box-shadow:  5px 5px 6px #383838, 
+             -5px -5px 6px #565656;
+             padding:.1rem;
 }
 
 .itmRemove, .splRemove{
@@ -151,6 +179,19 @@ input{
     text-align: center;
 }
 
+#background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    margin:0;
+    background-color: #474747;
+}
+
+html{
+    overflow-x:hidden;
+}
 
 #row2{
     margin-top: 5px;
@@ -159,7 +200,10 @@ input{
     margin-top: 10px;
 }
 #row4{
-    margin-top: 10px;
+    margin:1rem;
+}
+#row5{
+    overflow: scroll;
 }
 
 
