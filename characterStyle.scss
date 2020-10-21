@@ -1,0 +1,271 @@
+input{
+    text-align: left; 
+    background:none;
+    border:none;
+    font-weight:bold;
+}
+
+.body{
+    margin:5rem;
+}
+
+
+.check {
+    position:relative;
+    top:8px;
+    height: 10px;
+    width: 10px;
+    background-color: #808080;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.checkSkill{
+    position:relative;
+    top:10px;
+    margin-top:-1px;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border:solid 1px;
+    cursor: pointer;
+}
+
+.checkThrow{
+    position:relative;
+    top:10px;
+    margin-top:-1px;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    border:solid 1px;
+    cursor: pointer;
+}
+
+#Skills{
+    margin-top: 10px;
+}
+
+.container{
+    margin-top: 10px;
+    
+}
+
+.image-upload > input
+{
+    display: none;
+}
+.image-upload img
+{
+    cursor: pointer;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    object-position: 50% 10%;
+    border-radius: 50%;
+    border: solid 2px;
+background: linear-gradient(145deg, #4c4c4c, #404040);
+box-shadow:  5px 5px 6px #383838, 
+             -5px -5px 6px #565656;
+}
+.image-upload{
+    shape-outside: circle(50%);
+    width: 350px;
+    height: 350px;
+    float: left;
+    margin-right: 10px;
+
+}
+.stats{ 
+    text-align: center; 
+    border:none;
+    background:none;
+    width: 25px;
+    margin: auto;
+}
+
+.spellSlots{
+    display: none;
+}
+.col-md-4{
+    text-align: center;
+}
+.col-sm-2{
+    text-align: center;
+}
+
+.btnSave{
+    Margin: 10px 0px;
+    
+}
+
+.btnTab {
+    border-radius: 15px;
+    background: linear-gradient(145deg, #404040, #4c4c4c);
+    box-shadow:  5px 5px 6px #383838, 
+                 -5px -5px 6px #565656;
+}
+input{
+    margin:.1rem;
+    border-radius: 15px;
+    background: #474747;
+    box-shadow: inset 5px 5px 6px #383838, 
+                inset -5px -5px 6px #565656;
+}
+
+.badge{
+    margin:.2rem;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #4c4c4c, #404040);
+    box-shadow:  5px 5px 6px #383838, 
+                 -5px -5px 6px #565656;
+}
+     
+.atkBtn, .splBtn, .itmBtn{
+    margin-top: 5px;
+    
+}
+.atkContainer input, .splContainer input, .itmContainer input{
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.atkContainer .row:hover .atkRemove, .splContainer .row:hover .splRemove, .itmContainer .row:hover .itmRemove {
+   display:inline;
+}
+
+.atk-header, .itm-header, .spl-header{
+    margin-top: 2px;
+    color: white;
+    border-radius: 10px;
+    border-radius: 15px;
+background: linear-gradient(145deg, #4c4c4c, #404040);
+box-shadow:  5px 5px 6px #383838, 
+             -5px -5px 6px #565656;
+             padding:.1rem;
+}
+
+.itmRemove, .splRemove{
+    position: absolute;
+    border:none;
+    margin-top:4px;
+    margin-left:15px;
+    display:none;
+    z-index: 1;
+}
+.atkRemove{
+    position: absolute;
+    border:none;
+    margin-top:4px;
+    margin-left:-7px;
+    display:none; 
+    z-index: 1;
+}
+
+#attacks{
+    margin-top: 20px;
+
+}
+
+
+#content-left{
+    text-align: center;
+}
+
+#background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    margin:0;
+    background-color: #474747;
+}
+
+html{
+    overflow-x:hidden;
+
+}
+
+#row2{
+    margin-top: 5px;
+} 
+#row3{
+    margin-top: 10px;
+}
+#row4{
+    margin:1rem;
+}
+#row5{
+    overflow: scroll;
+}
+
+
+.skillRow{
+    margin-bottom: -5px;
+}
+
+.skillRow label{
+    float: left;
+}
+.skillRow input{
+    width: 25px;
+}
+
+
+.gold{
+    position:relative;
+    top:8px;
+    height: 10px;
+    width: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    margin-right:2px;
+}
+
+
+
+#gold, #silver, #copper{
+    width: 40px;
+}
+
+.silver{
+    position:relative;
+    top:8px;
+    height: 10px;
+    width: 10px;
+    background-color: silver;
+    border-radius: 50%;
+    margin-right:2px;
+}
+
+.copper{
+    position:relative;
+    top:8px;
+    height: 10px;
+    width: 10px;
+    background-color: burlywood;
+    border-radius: 50%;
+    margin-right:2px;
+}
+
+.currency input{
+    width: 30px;
+    text-align:center;
+}
+
+.currency{
+    margin:10px;
+    margin-left:70px;
+}
+
+.bag{
+    width:25px;
+    height:25px;
+}
+
+
